@@ -1,5 +1,5 @@
 import { Component,computed,signal } from '@angular/core';
-import { USUARIOS_FALSOS } from '../../usuario-falsos';
+import { USUARIOS_FALSOS } from '../usuario-falsos';
 const indiceAleatorio = Math.floor(Math.random() * USUARIOS_FALSOS.length);
 
 @Component({
