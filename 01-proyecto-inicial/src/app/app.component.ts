@@ -15,10 +15,10 @@ import { TareasComponent } from "./tareas/tareas.component";
 export class AppComponent {
 
   usuarios = USUARIOS_FALSOS;
-  idUsuarioSeleccionado = 'u1';
+  idUsuarioSeleccionado? : string;
 
   get usuarioSeleccionado() {
-    return this.usuarios.find(usuario => usuario.id === this.idUsuarioSeleccionado);
+    return this.usuarios.find(usuario => usuario.id === this.idUsuarioSeleccionado)!;
   }
   SeleccionarUsuario(id: string) {
     this.idUsuarioSeleccionado = id;

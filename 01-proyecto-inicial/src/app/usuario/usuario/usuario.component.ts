@@ -1,5 +1,10 @@
 import { Component,computed,EventEmitter,input,Input,Output,signal } from '@angular/core';
 
+interface Usuario {
+  id: string;
+  avatar: string;
+  nombre: string;
+}
 @Component({
   selector: 'app-usuario',
   standalone: true,
@@ -9,19 +14,26 @@ import { Component,computed,EventEmitter,input,Input,Output,signal } from '@angu
 })
 export class UsuarioComponent {
  
-  @Input({required:true}) id!: string;
-  @Input({required:true}) avatar!: string;
-  @Input({required:true}) nombre!: string;
+  //usar un solo input de tipo objeto
+  @Input({required: true}) usuario!: Usuario;
+  //@Input({required: true}) usuario!: {
+   // id: string;
+    //avatar: string;
+    //nombre: string;
+  //};
+  //@Input({required:true}) id!: string;
+  //@Input({required:true}) avatar!: string;
+  //@Input({required:true}) nombre!: string;
   @Output() seleccionarUsuario = new EventEmitter();
   //avatar = input.required<string>();
   //nombre = input.required<string>();
   
   get imagenUsuario() {
     
-    return 'assets/usuarios/' + this.avatar;
+    return 'assets/usuarios/' + this.usuario.avatar;
  }
  
   SeleccionarUsuario() {
-    this.seleccionarUsuario.emit(this.id);
+    this.seleccionarUsuario.emit(this.usuario.id);
   }
 }

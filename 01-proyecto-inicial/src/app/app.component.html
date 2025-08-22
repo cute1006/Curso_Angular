@@ -1,43 +1,22 @@
 <!--<app-encabezado></app-encabezado>-->
 <app-encabezado />
 <main>
+    <!-- valores acorde con el tipo de objeto -->
     <ul id="usuarios">
+       @for (usuario of usuarios; track usuario.id) {
         <li>
             <app-usuario 
-                [id]="usuarios[0].id" 
-                [avatar]="usuarios[0].avatar"
-                [nombre]="usuarios[0].nombre">
+                [usuario]="usuario"
+                (seleccionarUsuario)="SeleccionarUsuario($event)">
             </app-usuario>
         </li>
-        <li>
-            <app-usuario 
-                [id]="usuarios[1].id" 
-                [avatar]="usuarios[1].avatar"
-                [nombre]="usuarios[1].nombre">
-            </app-usuario>
-        </li>
-        <li>
-            <app-usuario 
-                [id]="usuarios[2].id" 
-                [avatar]="usuarios[2].avatar"
-                [nombre]="usuarios[2].nombre">
-            </app-usuario>
-        </li>
-        <li>
-            <app-usuario 
-                [id]="usuarios[3].id" 
-                [avatar]="usuarios[3].avatar"
-                [nombre]="usuarios[3].nombre">
-            </app-usuario>
-        </li>
-        <li>
-            <app-usuario 
-                [id]="usuarios[4].id" 
-                [avatar]="usuarios[4].avatar"
-                [nombre]="usuarios[4].nombre">
-            </app-usuario>
-        </li>
+       }
     </ul>
-    
+    @if (usuarioSeleccionado) {
+         <app-tareas [nombre]="usuarioSeleccionado.nombre"></app-tareas>
+    }
+    @else {
+        <p id="textoCondicional">Seleccione un usuario de la lista</p>
+    }
+   
 </main>
-<app-tareas nombre="..."></app-tareas>
