@@ -13,7 +13,9 @@
        }
     </ul>
     @if (usuarioSeleccionado) {
-         <app-tareas [nombre]="usuarioSeleccionado.nombre"></app-tareas>
+         <app-tareas
+         [idUsuario]="usuarioSeleccionado.id" 
+         [nombre]="usuarioSeleccionado.nombre"></app-tareas>
     }
     @else {
         <p id="textoCondicional">Seleccione un usuario de la lista</p>
