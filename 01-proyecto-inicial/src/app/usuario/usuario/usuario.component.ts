@@ -1,10 +1,5 @@
 import { Component,computed,EventEmitter,input,Input,Output,signal } from '@angular/core';
-
-interface Usuario {
-  id: string;
-  avatar: string;
-  nombre: string;
-}
+import { type Usuario } from './usuario.model';
 @Component({
   selector: 'app-usuario',
   standalone: true,
@@ -16,6 +11,7 @@ export class UsuarioComponent {
  
   //usar un solo input de tipo objeto
   @Input({required: true}) usuario!: Usuario;
+  @Input({required:true}) seleccionado! : boolean;
   //@Input({required: true}) usuario!: {
    // id: string;
     //avatar: string;

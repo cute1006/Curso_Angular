@@ -14,7 +14,7 @@ export class TareasComponent {
 
  tareas = [
   {
-       id:1,
+       id:'t1',
        idUsuario:'u1',
        titulo:'Dominar Angular',
         resumen:'Apreder todas las características básicas y avanzasAngular cómo apicarlas.',

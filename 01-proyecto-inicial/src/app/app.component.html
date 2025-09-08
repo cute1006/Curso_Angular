@@ -7,7 +7,9 @@
         <li>
             <app-usuario 
                 [usuario]="usuario"
-                (seleccionarUsuario)="SeleccionarUsuario($event)">
+                [seleccionado]="usuario.id === idUsuarioSeleccionado"
+                (seleccionarUsuario)="SeleccionarUsuario($event)"
+                >
             </app-usuario>
         </li>
        }
