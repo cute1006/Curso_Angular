@@ -1,15 +1,22 @@
+ @if(estarAgregandoTareaNueva) {
+    <app-tarea-nueva
+        (cerrar)="cerrarFormulario($event)"></app-tarea-nueva>
+ } 
 <section id="tareas">
     <h2>Tareas de {{nombre}}</h2>
     <header>   
         <menu>
-            <button>Agregar tarea</button>
+            <button (click)="alIniciarNuevaTarea()">Agregar Tarea Nueva</button>
         </menu>
     </header>
 
      <ul>
          @for(tarea of tareasUsuarioSeleccionado; track tarea.id) {
             <li>
-                <app-tarea [Tarea]="tarea"></app-tarea>
+                <app-tarea 
+                    [Tarea]="tarea"
+                    (terminada)="alCompletarTarea($event)">
+                </app-tarea>
             </li>
          }
     </ul> 
