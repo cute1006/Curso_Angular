@@ -56,8 +56,7 @@ export class TareasComponent {
  alIniciarNuevaTarea() {
   this.estarAgregandoTareaNueva = true;
  }
- cerrarFormulario(guardar: boolean) {
- this.cerrar = guardar;
+ cerrarFormulario() {
   this.estarAgregandoTareaNueva = false;
  }
 }

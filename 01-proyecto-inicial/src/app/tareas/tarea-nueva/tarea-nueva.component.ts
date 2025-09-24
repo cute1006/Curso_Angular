@@ -9,9 +9,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class TareaNuevaComponent {
 
- @Output() cerrar = new EventEmitter<boolean>();
+ @Output() cerrar = new EventEmitter<void>();
 
  cerrarFormulario() {
-  this.cerrar.emit(true);
+  this.cerrar.emit();
   }
 }
