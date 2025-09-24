@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TareaComponent } from "./tarea/tarea.component";
 import { TareaNuevaComponent } from "./tarea-nueva/tarea-nueva.component";
+import { type infoNuevaTarea } from './tarea/tarea.model';
 
 @Component({
   selector: 'app-tareas',
@@ -57,6 +58,17 @@ export class TareasComponent {
   this.estarAgregandoTareaNueva = true;
  }
  cerrarFormulario() {
+  this.estarAgregandoTareaNueva = false;
+ }
+
+ alAgregarTarea(infoTarea:infoNuevaTarea) {
+  this.tareas.push({
+    id: 't' + (this.tareas.length + 1).toString(),
+    idUsuario: this.idUsuario,
+    titulo: infoTarea.tituloIngresado,
+    resumen: infoTarea.resumenIngresado,
+    expira: infoTarea.fechaExpiraIngresada
+  });
   this.estarAgregandoTareaNueva = false;
  }
 }

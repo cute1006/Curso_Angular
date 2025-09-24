@@ -1,6 +1,6 @@
  @if(estarAgregandoTareaNueva) {
     <app-tarea-nueva
-        (cerrar)="cerrarFormulario()"></app-tarea-nueva>
+        (cerrar)="cerrarFormulario()" (agregar)="alAgregarTarea($event)"></app-tarea-nueva>
  } 
 <section id="tareas">
     <h2>Tareas de {{nombre}}</h2>
